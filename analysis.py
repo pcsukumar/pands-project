@@ -3,13 +3,12 @@
 
 import pandas as pd
 
-df = pd.read_csv('iris.data', header=None)
+df = pd.read_csv('iris.data', header=None, names=["sepal_length_cm","sepal_width_cm", "petal_length_cm","petal_width_cm","class"])
+
 print(df)
 print(df.dtypes)
 print(df.columns)
 
-df=df.rename(columns={df.columns[0]: "sepal_length_cm", df.columns[1]: "sepal_width_cm",df.columns[2]: 
-"petal_length_cm", df.columns[3]: "petal_width_cm", df.columns[4]: "class"})
 
 print(df.columns)
 print(df)
