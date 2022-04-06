@@ -258,6 +258,11 @@ df.describe()
 
 
 
+##### Sepal length ranges from 4.3 cm to 7.9 cm with a mean of 5.8 cm and standard deviation 0.82. 
+##### Sepal width ranges from 1 cm to 6.9 cm with a mean of 3.1 cm and standard deviation 0.43. 
+##### Petal length ranges from 1.0 cm to 6.9 cm with a mean 3.75 cm and standard deviation 1.76.
+##### Petal width ranges from 0.1 cm to 2.5 cm with a mean 1.19 cm and standard deviation 0.76.
+
 #### Find the mean for each class
 
 
@@ -326,6 +331,8 @@ df.groupby('class').mean()
 </div>
 
 
+
+##### The above table shows mean sepal length, sepal width and petal lenght, petal width for each species of Iris. Virginica has longest mean sepal length and petal length, wheareas setosa has shortest mean sepal length and petal length. Versicolor has shortest mean sepal width, whereas setosa has shortest mean petal width. 
 
 #### Find Count, Min, Max and Mean for each class
 
@@ -467,6 +474,8 @@ df.groupby('class').agg(['count', 'min', 'max', 'mean'])
 
 
 
+##### The table above shows the minimum, maximum and mean sepal length, sepal width, petal length, petal width for each species.
+
 ## Plotting Data
 
 ### Histograms
@@ -483,7 +492,7 @@ plt.show()
 
 
     
-![png](output_19_0.png)
+![png](output_22_0.png)
     
 
 
@@ -499,7 +508,7 @@ plt.show()
 
 
     
-![png](output_20_0.png)
+![png](output_23_0.png)
     
 
 
@@ -515,7 +524,7 @@ plt.show()
 
 
     
-![png](output_21_0.png)
+![png](output_24_0.png)
     
 
 
@@ -531,17 +540,88 @@ plt.show()
 
 
     
-![png](output_22_0.png)
+![png](output_25_0.png)
     
 
 
 
 ```python
-g = sns.pairplot(df, hue = 'class')
+g = sns.pairplot(df, hue = 'class', diag_kind="hist", corner=True)
 ```
 
 
     
-![png](output_23_0.png)
+![png](output_26_0.png)
     
+
+
+
+```python
+print('Correlation:')
+df.corr()
+```
+
+    Correlation:
+    
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>sepal_length</th>
+      <td>1.000000</td>
+      <td>-0.109369</td>
+      <td>0.871754</td>
+      <td>0.817954</td>
+    </tr>
+    <tr>
+      <th>sepal_width</th>
+      <td>-0.109369</td>
+      <td>1.000000</td>
+      <td>-0.420516</td>
+      <td>-0.356544</td>
+    </tr>
+    <tr>
+      <th>petal_length</th>
+      <td>0.871754</td>
+      <td>-0.420516</td>
+      <td>1.000000</td>
+      <td>0.962757</td>
+    </tr>
+    <tr>
+      <th>petal_width</th>
+      <td>0.817954</td>
+      <td>-0.356544</td>
+      <td>0.962757</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
