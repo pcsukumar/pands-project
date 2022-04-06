@@ -4,11 +4,13 @@
 
 ```python
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 ```
 
 
 ```python
-names=["sepal_length_cm","sepal_width_cm", "petal_length_cm","petal_width_cm","class"]
+names=["sepal_length","sepal_width", "petal_length","petal_width","class"]
 df = pd.read_csv('iris.data', header=None, names=names)
 df.head()
 ```
@@ -34,10 +36,10 @@ df.head()
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>sepal_length_cm</th>
-      <th>sepal_width_cm</th>
-      <th>petal_length_cm</th>
-      <th>petal_width_cm</th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
       <th>class</th>
     </tr>
   </thead>
@@ -88,6 +90,8 @@ df.head()
 
 
 
+## Explore Data
+
 #### Use the 'shape' attribute to check the number of rows and cloumns in the data frame.
 
 
@@ -102,6 +106,25 @@ df.shape
 
 
 
+
+```python
+df.info()
+```
+
+    <class 'pandas.core.frame.DataFrame'>
+    RangeIndex: 150 entries, 0 to 149
+    Data columns (total 5 columns):
+     #   Column        Non-Null Count  Dtype  
+    ---  ------        --------------  -----  
+     0   sepal_length  150 non-null    float64
+     1   sepal_width   150 non-null    float64
+     2   petal_length  150 non-null    float64
+     3   petal_width   150 non-null    float64
+     4   class         150 non-null    object 
+    dtypes: float64(4), object(1)
+    memory usage: 6.0+ KB
+    
+
 #### Check the data types of variables in the data frame
 
 
@@ -112,11 +135,11 @@ df.dtypes
 
 
 
-    0    float64
-    1    float64
-    2    float64
-    3    float64
-    4     object
+    sepal_length    float64
+    sepal_width     float64
+    petal_length    float64
+    petal_width     float64
+    class            object
     dtype: object
 
 
@@ -166,10 +189,10 @@ df.describe()
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>sepal_length_cm</th>
-      <th>sepal_width_cm</th>
-      <th>petal_length_cm</th>
-      <th>petal_width_cm</th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
     </tr>
   </thead>
   <tbody>
@@ -263,10 +286,10 @@ df.groupby('class').mean()
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>sepal_length_cm</th>
-      <th>sepal_width_cm</th>
-      <th>petal_length_cm</th>
-      <th>petal_width_cm</th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
     </tr>
     <tr>
       <th>class</th>
@@ -336,10 +359,10 @@ df.groupby('class').agg(['count', 'min', 'max', 'mean'])
   <thead>
     <tr>
       <th></th>
-      <th colspan="4" halign="left">sepal_length_cm</th>
-      <th colspan="4" halign="left">sepal_width_cm</th>
-      <th colspan="4" halign="left">petal_length_cm</th>
-      <th colspan="4" halign="left">petal_width_cm</th>
+      <th colspan="4" halign="left">sepal_length</th>
+      <th colspan="4" halign="left">sepal_width</th>
+      <th colspan="4" halign="left">petal_length</th>
+      <th colspan="4" halign="left">petal_width</th>
     </tr>
     <tr>
       <th></th>
@@ -442,4 +465,83 @@ df.groupby('class').agg(['count', 'min', 'max', 'mean'])
 </table>
 </div>
 
+
+
+## Plotting Data
+
+### Histograms
+
+
+```python
+x = df.sepal_length
+plt.hist(x, bins = 20, color = "green")
+plt.title("Sepal Length in cm")
+plt.xlabel("Sepal Length (cm)")
+plt.ylabel("Count")
+plt.show()
+```
+
+
+    
+![png](output_19_0.png)
+    
+
+
+
+```python
+x = df.sepal_width
+plt.hist(x, bins = 20, color = "Blue")
+plt.title("Sepal Width in cm")
+plt.xlabel("Sepal Width (cm)")
+plt.ylabel("Count")
+plt.show()
+```
+
+
+    
+![png](output_20_0.png)
+    
+
+
+
+```python
+x = df.petal_length
+plt.hist(x, bins = 20, color = "cyan")
+plt.title("Petal Length in cm")
+plt.xlabel("Petal Length (cm)")
+plt.ylabel("Count")
+plt.show()
+```
+
+
+    
+![png](output_21_0.png)
+    
+
+
+
+```python
+x = df.petal_width
+plt.hist(x, bins = 20, color = "red")
+plt.title("Petal Width in cm")
+plt.xlabel("Petal Width (cm)")
+plt.ylabel("Count")
+plt.show()
+```
+
+
+    
+![png](output_22_0.png)
+    
+
+
+
+```python
+g = sns.pairplot(df, hue = 'class')
+```
+
+
+    
+![png](output_23_0.png)
+    
 
