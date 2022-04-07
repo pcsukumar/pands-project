@@ -10,7 +10,7 @@ import seaborn as sns
 
 
 ```python
-names=["sepal_length","sepal_width", "petal_length","petal_width","class"]
+names=["sepal_length","sepal_width", "petal_length","petal_width","Species"]
 df = pd.read_csv('iris.data', header=None, names=names)
 df.head()
 ```
@@ -27,7 +27,7 @@ df.head()
       <th>sepal_width</th>
       <th>petal_length</th>
       <th>petal_width</th>
-      <th>class</th>
+      <th>Species</th>
     </tr>
   </thead>
   <tbody>
@@ -107,7 +107,7 @@ df.info()
      1   sepal_width   150 non-null    float64
      2   petal_length  150 non-null    float64
      3   petal_width   150 non-null    float64
-     4   class         150 non-null    object 
+     4   Species       150 non-null    object 
     dtypes: float64(4), object(1)
     memory usage: 6.0+ KB
     
@@ -126,7 +126,7 @@ df.dtypes
     sepal_width     float64
     petal_length    float64
     petal_width     float64
-    class            object
+    Species          object
     dtype: object
 
 
@@ -135,7 +135,7 @@ df.dtypes
 
 
 ```python
-df['class'].value_counts()
+df['Species'].value_counts()
 ```
 
 
@@ -144,7 +144,7 @@ df['class'].value_counts()
     Iris-setosa        50
     Iris-versicolor    50
     Iris-virginica     50
-    Name: class, dtype: int64
+    Name: Species, dtype: int64
 
 
 
@@ -159,7 +159,6 @@ df.describe()
 
 
 <div>
-
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -242,14 +241,13 @@ df.describe()
 
 
 ```python
-df.groupby('class').mean()
+df.groupby('Species').mean()
 ```
 
 
 
 
 <div>
-
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -260,7 +258,7 @@ df.groupby('class').mean()
       <th>petal_width</th>
     </tr>
     <tr>
-      <th>class</th>
+      <th>Species</th>
       <th></th>
       <th></th>
       <th></th>
@@ -301,14 +299,13 @@ df.groupby('class').mean()
 
 
 ```python
-df.groupby('class').agg(['count', 'min', 'max', 'mean'])
+df.groupby('Species').agg(['count', 'min', 'max', 'mean'])
 ```
 
 
 
 
 <div>
-
 <table border="1" class="dataframe">
   <thead>
     <tr>
@@ -338,7 +335,7 @@ df.groupby('class').agg(['count', 'min', 'max', 'mean'])
       <th>mean</th>
     </tr>
     <tr>
-      <th>class</th>
+      <th>Species</th>
       <th></th>
       <th></th>
       <th></th>
@@ -493,7 +490,7 @@ plt.show()
 
 
 ```python
-g = sns.pairplot(df, hue = 'class', diag_kind="hist", corner=True)
+g = sns.pairplot(df, hue = 'Species', diag_kind="hist", corner=True)
 ```
 
 
@@ -501,6 +498,8 @@ g = sns.pairplot(df, hue = 'class', diag_kind="hist", corner=True)
 ![png](output_26_0.png)
     
 
+
+### Correlation analysis
 
 
 ```python
@@ -558,4 +557,280 @@ df.corr()
 </table>
 </div>
 
+
+
+
+```python
+sns.heatmap(df.corr(), cmap = 'coolwarm', annot=True)
+```
+
+
+
+
+    <AxesSubplot:>
+
+
+
+
+    
+![png](output_29_1.png)
+    
+
+
+
+```python
+setosa = df[df.Species == 'Iris-setosa']
+setosa.head()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>Species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+sns.heatmap(setosa.corr(), cmap = 'coolwarm', annot=True)
+```
+
+
+
+
+    <AxesSubplot:>
+
+
+
+
+    
+![png](output_31_1.png)
+    
+
+
+
+```python
+versicolor = df[df.Species == 'Iris-versicolor']
+versicolor.head()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>Species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>50</th>
+      <td>7.0</td>
+      <td>3.2</td>
+      <td>4.7</td>
+      <td>1.4</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>6.4</td>
+      <td>3.2</td>
+      <td>4.5</td>
+      <td>1.5</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>6.9</td>
+      <td>3.1</td>
+      <td>4.9</td>
+      <td>1.5</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>5.5</td>
+      <td>2.3</td>
+      <td>4.0</td>
+      <td>1.3</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>6.5</td>
+      <td>2.8</td>
+      <td>4.6</td>
+      <td>1.5</td>
+      <td>Iris-versicolor</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+sns.heatmap(versicolor.corr(), cmap = 'coolwarm', annot=True)
+```
+
+
+
+
+    <AxesSubplot:>
+
+
+
+
+    
+![png](output_33_1.png)
+    
+
+
+
+```python
+virginica = df[df.Species == 'Iris-virginica']
+virginica.head()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>Species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>6.3</td>
+      <td>3.3</td>
+      <td>6.0</td>
+      <td>2.5</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>5.8</td>
+      <td>2.7</td>
+      <td>5.1</td>
+      <td>1.9</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>7.1</td>
+      <td>3.0</td>
+      <td>5.9</td>
+      <td>2.1</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>6.3</td>
+      <td>2.9</td>
+      <td>5.6</td>
+      <td>1.8</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.8</td>
+      <td>2.2</td>
+      <td>Iris-virginica</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+sns.heatmap(virginica.corr(), cmap = 'coolwarm', annot=True)
+```
+
+
+
+
+    <AxesSubplot:>
+
+
+
+
+    
+![png](output_35_1.png)
+    
 
