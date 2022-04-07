@@ -567,9 +567,7 @@ sns.heatmap(df.corr(), cmap = 'coolwarm', annot=True)
 
 
 
-    <AxesSubplot:>
-
-
+   
 
 
     
@@ -653,9 +651,7 @@ sns.heatmap(setosa.corr(), cmap = 'coolwarm', annot=True)
 
 
 
-    <AxesSubplot:>
-
-
+  
 
 
     
@@ -739,7 +735,7 @@ sns.heatmap(versicolor.corr(), cmap = 'coolwarm', annot=True)
 
 
 
-    <AxesSubplot:>
+
 
 
 
@@ -825,7 +821,6 @@ sns.heatmap(virginica.corr(), cmap = 'coolwarm', annot=True)
 
 
 
-    <AxesSubplot:>
 
 
 
