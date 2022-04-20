@@ -2,8 +2,12 @@
 #Author : Prasanth Sukumar
 
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-df = pd.read_csv('iris.data', header=None, names=["sepal_length_cm","sepal_width_cm", "petal_length_cm","petal_width_cm","class"])
+names=["sepal_length","sepal_width", "petal_length","petal_width","Species"]
+df = pd.read_csv('iris.data', header=None, names=names)
+df.head()
 
 print(df)
 print(df.dtypes)
