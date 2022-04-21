@@ -6,8 +6,12 @@ Head of data frame
 3           4.6          3.1           1.5          0.2  Iris-setosa
 4           5.0          3.6           1.4          0.2  Iris-setosa
 
+
+
 Shape of data frame
 (150, 5)
+
+
 
 Decripton of data frame
        sepal_length  sepal_width  petal_length  petal_width
@@ -20,12 +24,16 @@ min        4.300000     2.000000      1.000000     0.100000
 75%        6.400000     3.300000      5.100000     1.800000
 max        7.900000     4.400000      6.900000     2.500000
 
+
+
 Group mean for each species
                  sepal_length  sepal_width  petal_length  petal_width
 Species                                                              
 Iris-setosa             5.006        3.418         1.464        0.244
 Iris-versicolor         5.936        2.770         4.260        1.326
 Iris-virginica          6.588        2.974         5.552        2.026
+
+
 
 Group count/min/max/mean for each species
                 sepal_length                  sepal_width                  petal_length                  petal_width                 
@@ -34,3 +42,6 @@ Species
 Iris-setosa               50  4.3  5.8  5.006          50  2.3  4.4  3.418           50  1.0  1.9  1.464          50  0.1  0.6  0.244
 Iris-versicolor           50  4.9  7.0  5.936          50  2.0  3.4  2.770           50  3.0  5.1  4.260          50  1.0  1.8  1.326
 Iris-virginica            50  4.9  7.9  6.588          50  2.2  3.8  2.974           50  4.5  6.9  5.552          50  1.4  2.5  2.026
+
+
+
