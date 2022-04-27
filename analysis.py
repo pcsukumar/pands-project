@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
 names=["sepal_length","sepal_width", "petal_length","petal_width","Species"]
 df = pd.read_csv('iris.data', header=None, names=names)
 
@@ -45,6 +46,7 @@ plt.hist(x, bins = 20, color = "green")
 plt.title("Sepal Length in cm")
 plt.xlabel("Sepal Length (cm)")
 plt.ylabel("Count")
+plt.savefig('Barchart_Sepal_Length.png')
 plt.show()
    
 
@@ -55,6 +57,7 @@ plt.hist(x, bins = 20, color = "Blue")
 plt.title("Sepal Width in cm")
 plt.xlabel("Sepal Width (cm)")
 plt.ylabel("Count")
+plt.savefig('Barchart_Sepal_Width.png')
 plt.show()
 
 
@@ -64,6 +67,7 @@ plt.hist(x, bins = 20, color = "cyan")
 plt.title("Petal Length in cm")
 plt.xlabel("Petal Length (cm)")
 plt.ylabel("Count")
+plt.savefig('Barchart_Petal_Length.png')
 plt.show()
 
 #Barchart representing the distribution petal width
@@ -72,11 +76,13 @@ plt.hist(x, bins = 20, color = "red")
 plt.title("Petal Width in cm")
 plt.xlabel("Petal Width (cm)")
 plt.ylabel("Count")
+plt.savefig('Barchart_Petal_Width.png')
 plt.show()
 
 #Pair plot to explore the pair wise relationship between different variables 
-g = sns.pairplot(df, hue = 'Species', diag_kind="hist", corner=True) 
-
+sns.pairplot(df, hue = 'Species', diag_kind="hist", corner=True) 
+plt.savefig('Pairplot_all_variables.png')
+plt.show()
 
 #Table exploring the correlation between variables
 print('Correlation:')
@@ -84,8 +90,9 @@ df.corr()
 
 
 #Create a correlaton heat map for all species
-
 sns.heatmap(df.corr(), cmap = 'coolwarm', annot=True)
+plt.savefig('Correlation_heatmap_all_species.png')
+plt.show()
 
 
 
@@ -98,6 +105,8 @@ setosa.head()
 
 #Correlation heat map for the species Iris-setosa
 sns.heatmap(setosa.corr(), cmap = 'coolwarm', annot=True)
+plt.savefig('Correlation_heatmap_setosa.png')
+plt.show()
 
 
 #Correlation between the variables for the species Iris-versicolor
@@ -106,6 +115,8 @@ versicolor.head()
 
 #correlation heatmap for the species the species Iris-versicolor
 sns.heatmap(versicolor.corr(), cmap = 'coolwarm', annot=True)
+plt.savefig('Correlation_heatmap_versicolor.png')
+plt.show()
 
 #Correlation between the variables for the species Iris-virginica
 virginica = df[df.Species == 'Iris-virginica']
@@ -113,6 +124,8 @@ virginica.head()
 
 #Correlation heatmap for the species Iris-virginica
 sns.heatmap(virginica.corr(), cmap = 'coolwarm', annot=True)
+plt.savefig('Correlation_heatmap_virginica.png')
+plt.show()
 
 #References
 # Printing multiple blank lines in python https://stackoverflow.com/questions/28130508/printing-multiple-blank-lines-in-python
