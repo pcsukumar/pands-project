@@ -10,15 +10,28 @@ import seaborn as sns
 
 
 ```python
-names=["sepal_length","sepal_width", "petal_length","petal_width","Species"]
+names=["sepal_length","sepal_width", "petal_length","petal_width","Species"] #As the dataset has no column names, a 'names' list is created with column names and add the names when data export from csv.
 df = pd.read_csv('iris.data', header=None, names=names)
-df.head()
+df.head() #to see the first 5 rows of the data frame
 ```
 
 
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -83,7 +96,7 @@ df.head()
 
 
 ```python
-df.shape
+df.shape #to view the shape of the data frame, howmany rows and columns.
 ```
 
 
@@ -95,7 +108,7 @@ df.shape
 
 
 ```python
-df.info()
+df.info() #Display number of rows, columns
 ```
 
     <class 'pandas.core.frame.DataFrame'>
@@ -116,7 +129,7 @@ df.info()
 
 
 ```python
-df.dtypes
+df.dtypes # to see the the data type of each column. 
 ```
 
 
@@ -131,11 +144,11 @@ df.dtypes
 
 
 
-#### Determine the number of classes in the data set
+#### Check the number of rows for each species in the data set
 
 
 ```python
-df['Species'].value_counts()
+df['Species'].value_counts() #to see the number of unique values.
 ```
 
 
@@ -152,13 +165,26 @@ df['Species'].value_counts()
 
 
 ```python
-df.describe()
+df.describe() #to get the descripton of the dataframe
 ```
 
 
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -232,22 +258,35 @@ df.describe()
 
 
 
-##### Sepal length ranges from 4.3 cm to 7.9 cm with a mean of 5.8 cm and standard deviation 0.82. 
-##### Sepal width ranges from 1 cm to 6.9 cm with a mean of 3.1 cm and standard deviation 0.43. 
-##### Petal length ranges from 1.0 cm to 6.9 cm with a mean 3.75 cm and standard deviation 1.76.
-##### Petal width ranges from 0.1 cm to 2.5 cm with a mean 1.19 cm and standard deviation 0.76.
+<font color=blue>Sepal length ranges from 4.3 cm to 7.9 cm with a mean of 5.8 cm and standard deviation 0.82. 
+Sepal width ranges from 1 cm to 6.9 cm with a mean of 3.1 cm and standard deviation 0.43. 
+Petal length ranges from 1.0 cm to 6.9 cm with a mean 3.75 cm and standard deviation 1.76.
+Petal width ranges from 0.1 cm to 2.5 cm with a mean 1.19 cm and standard deviation 0.76.</font>
 
 #### Find the mean for each class
 
 
 ```python
-df.groupby('Species').mean()
+df.groupby('Species').mean() #This is to generate a table for mean values for each species.
 ```
 
 
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -293,19 +332,36 @@ df.groupby('Species').mean()
 
 
 
-##### The above table shows mean sepal length, sepal width and petal lenght, petal width for each species of Iris. Virginica has longest mean sepal length and petal length, wheareas setosa has shortest mean sepal length and petal length. Versicolor has shortest mean sepal width, whereas setosa has shortest mean petal width. 
+<font color=blue>The above table shows mean sepal length, sepal width and petal lenght, petal width for each species of Iris. Virginica has longest mean sepal length and petal length, wheareas setosa has shortest mean sepal length and petal length. Versicolor has shortest mean sepal width, whereas setosa has shortest mean petal width. </font>
 
 #### Find Count, Min, Max and Mean for each class
 
 
 ```python
-df.groupby('Species').agg(['count', 'min', 'max', 'mean'])
+df.groupby('Species').agg(['count', 'min', 'max', 'mean']) #Generate count, min, max, and mean for each species.
 ```
 
 
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr>
@@ -418,7 +474,7 @@ df.groupby('Species').agg(['count', 'min', 'max', 'mean'])
 
 
 
-##### The table above shows the minimum, maximum and mean sepal length, sepal width, petal length, petal width for each species.
+The table above shows the minimum, maximum and mean sepal length, sepal width, petal length, petal width for each species.
 
 ## Plotting Data
 
@@ -490,7 +546,7 @@ plt.show()
 
 
 ```python
-g = sns.pairplot(df, hue = 'Species', diag_kind="hist", corner=True)
+g = sns.pairplot(df, hue = 'Species', diag_kind="hist", corner=True) #Pair plot to explore the pair wise relationship between different variables 
 ```
 
 
@@ -503,7 +559,7 @@ g = sns.pairplot(df, hue = 'Species', diag_kind="hist", corner=True)
 
 
 ```python
-print('Correlation:')
+print('Correlation:') #Table exploring the correlation between variables
 df.corr()
 ```
 
@@ -514,6 +570,19 @@ df.corr()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -561,13 +630,15 @@ df.corr()
 
 
 ```python
-sns.heatmap(df.corr(), cmap = 'coolwarm', annot=True)
+sns.heatmap(df.corr(), cmap = 'coolwarm', annot=True) #Create a correlaton heat map for all species
 ```
 
 
 
 
-   
+    <AxesSubplot:>
+
+
 
 
     
@@ -575,9 +646,11 @@ sns.heatmap(df.corr(), cmap = 'coolwarm', annot=True)
     
 
 
+### Species wise analysis
+
 
 ```python
-setosa = df[df.Species == 'Iris-setosa']
+setosa = df[df.Species == 'Iris-setosa'] #Correlation between the variables for the species Iris-setosa
 setosa.head()
 ```
 
@@ -585,6 +658,19 @@ setosa.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -645,23 +731,25 @@ setosa.head()
 
 
 ```python
-sns.heatmap(setosa.corr(), cmap = 'coolwarm', annot=True)
+sns.heatmap(setosa.corr(), cmap = 'coolwarm', annot=True) #Correlation heat map for the species Iris-setosa
 ```
 
 
 
 
-  
+    <AxesSubplot:>
+
+
 
 
     
-![png](output_31_1.png)
+![png](output_32_1.png)
     
 
 
 
 ```python
-versicolor = df[df.Species == 'Iris-versicolor']
+versicolor = df[df.Species == 'Iris-versicolor'] #Correlation between the variables for the species Iris-versicolor
 versicolor.head()
 ```
 
@@ -669,6 +757,19 @@ versicolor.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -729,25 +830,25 @@ versicolor.head()
 
 
 ```python
-sns.heatmap(versicolor.corr(), cmap = 'coolwarm', annot=True)
+sns.heatmap(versicolor.corr(), cmap = 'coolwarm', annot=True) #correlation heatmap for the species Iris-versicolor
 ```
 
 
 
 
-
+    <AxesSubplot:>
 
 
 
 
     
-![png](output_33_1.png)
+![png](output_34_1.png)
     
 
 
 
 ```python
-virginica = df[df.Species == 'Iris-virginica']
+virginica = df[df.Species == 'Iris-virginica'] #Correlation between the variables for the species Iris-virginica
 virginica.head()
 ```
 
@@ -755,6 +856,19 @@ virginica.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -815,17 +929,18 @@ virginica.head()
 
 
 ```python
-sns.heatmap(virginica.corr(), cmap = 'coolwarm', annot=True)
+sns.heatmap(virginica.corr(), cmap = 'coolwarm', annot=True) #Correlation heatmap for the species Iris-virginica
 ```
 
 
 
 
+    <AxesSubplot:>
 
 
 
 
     
-![png](output_35_1.png)
+![png](output_36_1.png)
     
 
