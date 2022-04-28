@@ -85,9 +85,9 @@ plt.savefig('Pairplot_all_variables.png')
 plt.show()
 
 #Table exploring the correlation between variables
-print('Correlation:')
-df.corr()
-
+corre = df.corr()
+with open("results.txt", "a") as f: 
+    f.write("Correlation between variables" + "\n" + str(corre) + "\n"*4) 
 
 #Create a correlaton heat map for all species
 sns.heatmap(df.corr(), cmap = 'coolwarm', annot=True)
