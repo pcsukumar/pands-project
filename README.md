@@ -438,7 +438,7 @@ plt.show()
 
 
     
-![png](output_22_0.png)
+![png](images\output_22_0.png)
     
 
 
@@ -454,7 +454,7 @@ plt.show()
 
 
     
-![png](output_23_0.png)
+![png](images\output_23_0.png)
     
 
 
@@ -470,7 +470,7 @@ plt.show()
 
 
     
-![png](output_24_0.png)
+![png](images\output_24_0.png)
     
 
 
@@ -486,7 +486,7 @@ plt.show()
 
 
     
-![png](output_25_0.png)
+![png](images\output_25_0.png)
     
 
 
@@ -497,7 +497,7 @@ g = sns.pairplot(df, hue = 'Species', diag_kind="hist", corner=True) #Pair plot 
 
 
     
-![png](output_26_0.png)
+![png](images\output_26_0.png)
     
 
 
@@ -570,13 +570,10 @@ sns.heatmap(df.corr(), cmap = 'coolwarm', annot=True) #Create a correlaton heat 
 
 
 
-    <AxesSubplot:>
-
-
-
+  
 
     
-![png](output_29_1.png)
+![png](images\output_29_1.png)
     
 
 
@@ -658,13 +655,11 @@ sns.heatmap(setosa.corr(), cmap = 'coolwarm', annot=True) #Correlation heat map 
 
 
 
-    <AxesSubplot:>
-
-
+    
 
 
     
-![png](output_32_1.png)
+![png](images\output_32_1.png)
     
 
 
@@ -744,13 +739,11 @@ sns.heatmap(versicolor.corr(), cmap = 'coolwarm', annot=True) #correlation heatm
 
 
 
-    <AxesSubplot:>
-
-
+  
 
 
     
-![png](output_34_1.png)
+![png](images\output_34_1.png)
     
 
 
@@ -830,12 +823,9 @@ sns.heatmap(virginica.corr(), cmap = 'coolwarm', annot=True) #Correlation heatma
 
 
 
-    <AxesSubplot:>
-
-
-
+ 
 
     
-![png](output_36_1.png)
+![png](images\output_36_1.png)
     
 
