@@ -127,5 +127,36 @@ sns.heatmap(virginica.corr(), cmap = 'coolwarm', annot=True)
 plt.savefig('Correlation_heatmap_virginica.png')
 plt.show()
 
+#Scatter plot to compare correlation between petal width and length for each species
+plt.title('Comparison between petal width and length for each species') 
+sns.scatterplot(x=df.petal_length, y=df.petal_width, hue = df.Species)
+plt.savefig('Scatter_petalWidth_lenght_by_species.png')
+plt.show()
+
+#Scatter plot to compare correlation between sepal width and length for each species
+plt.title('Comparison between sepal width and length for each species') 
+sns.scatterplot(x=df.sepal_length, y=df.sepal_width, hue = df.Species)
+plt.savefig('Scatter_sepalWidth_lenght_by_species.png')
+plt.show()
+
+
 #References
 # Printing multiple blank lines in python https://stackoverflow.com/questions/28130508/printing-multiple-blank-lines-in-python
+
+# Add column names to dataframe in Pandas: https://www.geeksforgeeks.org/add-column-names-to-dataframe-in-pandas/
+
+# pandas: Get the number of rows, columns, all elements (size) of DataFrame: https://note.nkmk.me/en/python-pandas-len-shape-size/
+
+# Python | Pandas Dataframe.describe() method https://www.geeksforgeeks.org/python-pandas-dataframe-describe-method/
+
+# Use Pandas Groupby to Group and Summarise DataFrames https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/
+
+# GroupBy in Pandas: Your Guide to Summarizing and Aggregating Data in Python https://www.analyticsvidhya.com/blog/2020/03/groupby-pandas-aggregating-data-python/
+
+# Plotting a Histogram in Python with Matplotlib and Pandas https://datagy.io/histogram-python/
+
+# Seaborn pairplot example https://pythonbasics.org/seaborn-pairplot/
+
+# How to Create a Seaborn Correlation Heatmap in Python? https://medium.com/@szabo.bibor/how-to-create-a-seaborn-correlation-heatmap-in-python-834c0686b88e
+
+# How To Filter Pandas Dataframe By Values of Column? https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
