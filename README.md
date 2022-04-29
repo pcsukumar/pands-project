@@ -19,6 +19,7 @@ df.head() #to see the first 5 rows of the data frame
 
 
 <div>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -308,6 +309,7 @@ df.groupby('Species').agg(['count', 'min', 'max', 'mean']) #Generate count, min,
 
 
 <div>
+
 <table border="1" class="dataframe">
   <thead>
     <tr>
@@ -486,7 +488,7 @@ plt.show()
 
 
     
-![png](images\output_25_0.png)
+![png](images/output_25_0.png)
     
 
 
@@ -501,7 +503,7 @@ g = sns.pairplot(df, hue = 'Species', diag_kind="hist", corner=True) #Pair plot 
     
 
 
-### Correlation analysis
+## Correlation analysis
 
 
 ```python
@@ -570,7 +572,10 @@ sns.heatmap(df.corr(), cmap = 'coolwarm', annot=True) #Create a correlaton heat 
 
 
 
-  
+   
+
+
+
 
     
 ![png](images/output_29_1.png)
@@ -589,6 +594,7 @@ setosa.head()
 
 
 <div>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -655,7 +661,9 @@ sns.heatmap(setosa.corr(), cmap = 'coolwarm', annot=True) #Correlation heat map 
 
 
 
-    
+ 
+
+
 
 
     
@@ -673,6 +681,7 @@ versicolor.head()
 
 
 <div>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -739,7 +748,8 @@ sns.heatmap(versicolor.corr(), cmap = 'coolwarm', annot=True) #correlation heatm
 
 
 
-  
+
+
 
 
     
@@ -757,6 +767,7 @@ virginica.head()
 
 
 <div>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -823,9 +834,76 @@ sns.heatmap(virginica.corr(), cmap = 'coolwarm', annot=True) #Correlation heatma
 
 
 
- 
 
     
 ![png](images/output_36_1.png)
     
 
+
+
+```python
+plt.figure(figsize=(12,7))
+plt.title('Comparison between petal width and length for each species') #Comparison between petal width and length for each species
+sns.scatterplot(x=df.petal_length, y=df.petal_width, hue = df.Species)
+```
+
+
+
+
+    <AxesSubplot:title={'center':'Comparison between petal width and length for each species'}, xlabel='petal_length', ylabel='petal_width'>
+
+
+
+
+    
+![png](output_37_1.png)
+    
+
+
+<font color=blue>The above scatter plot shows thate there is a good positive correlation between petal width and petal lenght in the case of Iris-versicolor. Correlation between petal width and petal length is not remarkable in the case of other species</font>
+
+
+```python
+plt.figure(figsize=(12,7))
+plt.title('Comparison between sepal width and length for each species') #Comparison between petal width and length for each species
+sns.scatterplot(x=df.sepal_length, y=df.sepal_width, hue = df.Species)
+```
+
+
+
+
+    <AxesSubplot:title={'center':'Comparison between sepal width and length for each species'}, xlabel='sepal_length', ylabel='sepal_width'>
+
+
+
+
+    
+![png](images/output_39_1.png)
+    
+
+
+<font color=blue>The above scatter plot shows thate there is a positive correlation between sepal width and sepal length in the case of Iris-setosa. Correlation between sepal width and sepal length is not clearly observable in the case of other species</font>
+
+### Summary and Conclusion
+
+<font color=blue>This section describe the conclusion and summary</font>
+
+### References
+
+Add column names to dataframe in Pandas: https://www.geeksforgeeks.org/add-column-names-to-dataframe-in-pandas/
+
+pandas: Get the number of rows, columns, all elements (size) of DataFrame: https://note.nkmk.me/en/python-pandas-len-shape-size/
+
+Python | Pandas Dataframe.describe() method https://www.geeksforgeeks.org/python-pandas-dataframe-describe-method/
+
+Use Pandas Groupby to Group and Summarise DataFrames https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/
+
+GroupBy in Pandas: Your Guide to Summarizing and Aggregating Data in Python https://www.analyticsvidhya.com/blog/2020/03/groupby-pandas-aggregating-data-python/
+
+Plotting a Histogram in Python with Matplotlib and Pandas https://datagy.io/histogram-python/
+
+Seaborn pairplot example https://pythonbasics.org/seaborn-pairplot/
+
+How to Create a Seaborn Correlation Heatmap in Python? https://medium.com/@szabo.bibor/how-to-create-a-seaborn-correlation-heatmap-in-python-834c0686b88e
+
+How To Filter Pandas Dataframe By Values of Column? https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
