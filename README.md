@@ -894,3 +894,5 @@ Seaborn pairplot example https://pythonbasics.org/seaborn-pairplot/
 How to Create a Seaborn Correlation Heatmap in Python? https://medium.com/@szabo.bibor/how-to-create-a-seaborn-correlation-heatmap-in-python-834c0686b88e
 
 How To Filter Pandas Dataframe By Values of Column? https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
+
+Printing multiple blank lines in python https://stackoverflow.com/questions/28130508/printing-multiple-blank-lines-in-python
