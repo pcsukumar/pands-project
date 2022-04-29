@@ -869,7 +869,7 @@ sns.scatterplot(x=df.sepal_length, y=df.sepal_width, hue = df.Species)
     
 
 
-<font color=blue>The above scatter plot shows that there is a positive correlation between sepal width and sepal length in the case of Iris-setosa only. Correlation between sepal width and sepal length is not clearly observable in the case of other species.</font>
+<p style="color:blue">The above scatter plot shows that there is a positive correlation between sepal width and sepal length in the case of Iris-setosa only. Correlation between sepal width and sepal length is not clearly observable in the case of other species.</p>
 
 ### Summary and Conclusion
 
