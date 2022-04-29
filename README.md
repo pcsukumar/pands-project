@@ -847,20 +847,12 @@ plt.title('Comparison between petal width and length for each species') #Compari
 sns.scatterplot(x=df.petal_length, y=df.petal_width, hue = df.Species)
 ```
 
-
-
-
-    <AxesSubplot:title={'center':'Comparison between petal width and length for each species'}, xlabel='petal_length', ylabel='petal_width'>
-
-
-
-
     
 ![png](images/output_37_1.png)
     
 
 
-<font color=blue>The above scatter plot shows thate there is a good positive correlation between petal width and petal lenght in the case of Iris-versicolor. Correlation between petal width and petal length is not remarkable in the case of other species</font>
+<font color=blue>The above scatter plot shows that there is a good positive correlation between petal width and petal lenght in the case of Iris-versicolor. Correlation between petal width and petal length is not that much in the case of other species.</font>
 
 
 ```python
@@ -872,17 +864,12 @@ sns.scatterplot(x=df.sepal_length, y=df.sepal_width, hue = df.Species)
 
 
 
-    <AxesSubplot:title={'center':'Comparison between sepal width and length for each species'}, xlabel='sepal_length', ylabel='sepal_width'>
-
-
-
-
-    
+      
 ![png](images/output_39_1.png)
     
 
 
-<font color=blue>The above scatter plot shows thate there is a positive correlation between sepal width and sepal length in the case of Iris-setosa. Correlation between sepal width and sepal length is not clearly observable in the case of other species</font>
+<font color=blue>The above scatter plot shows that there is a positive correlation between sepal width and sepal length in the case of Iris-setosa only. Correlation between sepal width and sepal length is not clearly observable in the case of other species.</font>
 
 ### Summary and Conclusion
 
