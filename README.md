@@ -873,9 +873,16 @@ The above scatter plot shows that there is a positive correlation between sepal 
 
 ### Summary and Conclusion
 
-This section describe the conclusion and summary
+The Iris dataset is the data set created by the British biologist Ronald Fisher. This data set contains measurement of sepal length, sepal width, petal length and petal width for 150 flowers from 3 species of Iris setosa, Iris versicolor, and Iris virginica. This analysis aims to explore the variables in the dataset and see any relationship exists between them. 
+
+Analysis shows that the average petal length and petal width is comparatively much smaller for the species Iris Setosa (1.46 cm and 0.244 cm respectively) and largest for Iris Virginica (5.55 cm and 2.03 cm). Iris Versicolor has almost similar petal length and width (4.26 cm and 1.33 cm) to that of the Iris Versicolor.
+
+Standard deviation of petal measurements shows that Iris Setosa has much less variability and Iris Virginica has the highest variability. Even though Iris Setosa has the smallest average speal lengths, the difference between the three species is minimal. Standard deviation shows that Setosa has the lowest variability in sepal length and Virginica has the highest.
+
+The average sepal width of the Setosa is slightly more than the averages for the other two species., however standard deviation shows that they all have almost same variability (~0.3). The scatter plot shows a strong positive relationship between the petal length and petal width for all species. Correlation analysis shows the correlation between petal length and petal width 0.96. However, when analyse this relationship for each species, it can be found that the correlation is weakest for Iris Setosa (0.31) and highest for Virginica (0.71). The correlation matrix shows a strong relationship between sepal length and sepal width for the Iris Setosa only.
 
 ### References
+Iris flower data set. https://en.wikipedia.org/wiki/Iris_flower_data_set
 
 Add column names to dataframe in Pandas: https://www.geeksforgeeks.org/add-column-names-to-dataframe-in-pandas/
 
