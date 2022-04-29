@@ -852,7 +852,7 @@ sns.scatterplot(x=df.petal_length, y=df.petal_width, hue = df.Species)
     
 
 
-<font color=blue>The above scatter plot shows that there is a good positive correlation between petal width and petal lenght in the case of Iris-versicolor. Correlation between petal width and petal length is not that much in the case of other species.</font>
+<font color=blue>The above scatter plot shows that there is a good positive correlation between petal width and petal length. This relationship is most prominent in the case of Iris-versicolor. Correlation between petal width and petal length is not that promenent in the case of other species.</font>
 
 
 ```python
