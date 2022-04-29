@@ -33,9 +33,9 @@ with open("results.txt", "a") as f:
     f.write("Group mean for each species" + "\n" + str(group_mean) + "\n"*4) 
 
 
-group_mean_etc = df.groupby('Species').agg(['count', 'min', 'max', 'mean'])#Generate count, min, max, and mean for each species.
+group_mean_etc = df.groupby('Species').agg(['count', 'min', 'max', 'mean', 'std'])#Generate count, min, max, and mean for each species.
 with open("results.txt", "a") as f: 
-    f.write("Group count/min/max/mean for each species" + "\n" + str(group_mean_etc) + "\n"*4) 
+    f.write("Group count/min/max/mean/std for each species" + "\n" + str(group_mean_etc) + "\n"*4) 
 
 
 #Plotting data
