@@ -234,10 +234,10 @@ df.describe() #to get the descripton of the dataframe
 
 
 
-<font color=blue>Sepal length ranges from 4.3 cm to 7.9 cm with a mean of 5.8 cm and standard deviation 0.82. 
+Sepal length ranges from 4.3 cm to 7.9 cm with a mean of 5.8 cm and standard deviation 0.82. 
 Sepal width ranges from 1 cm to 6.9 cm with a mean of 3.1 cm and standard deviation 0.43. 
 Petal length ranges from 1.0 cm to 6.9 cm with a mean 3.75 cm and standard deviation 1.76.
-Petal width ranges from 0.1 cm to 2.5 cm with a mean 1.19 cm and standard deviation 0.76.</font>
+Petal width ranges from 0.1 cm to 2.5 cm with a mean 1.19 cm and standard deviation 0.76.
 
 #### Find the mean for each class
 
@@ -296,7 +296,7 @@ df.groupby('Species').mean() #This is to generate a table for mean values for ea
 
 
 
-<font color=blue>The above table shows mean sepal length, sepal width and petal lenght, petal width for each species of Iris. Virginica has longest mean sepal length and petal length, wheareas setosa has shortest mean sepal length and petal length. Versicolor has shortest mean sepal width, whereas setosa has shortest mean petal width. </font>
+The above table shows mean sepal length, sepal width and petal lenght, petal width for each species of Iris. Virginica has longest mean sepal length and petal length, wheareas setosa has shortest mean sepal length and petal length. Versicolor has shortest mean sepal width, whereas setosa has shortest mean petal width.
 
 #### Find Count, Min, Max and Mean for each class
 
@@ -852,7 +852,7 @@ sns.scatterplot(x=df.petal_length, y=df.petal_width, hue = df.Species)
     
 
 
-<font color=blue>The above scatter plot shows that there is a good positive correlation between petal width and petal length. This relationship is most prominent in the case of Iris-versicolor. Correlation between petal width and petal length is not that promenent in the case of other species.</font>
+The above scatter plot shows that there is a good positive correlation between petal width and petal length. This relationship is most prominent in the case of Iris-versicolor. Correlation between petal width and petal length is not that promenent in the case of other species.
 
 
 ```python
@@ -869,11 +869,11 @@ sns.scatterplot(x=df.sepal_length, y=df.sepal_width, hue = df.Species)
     
 
 
-<p style="color:blue">The above scatter plot shows that there is a positive correlation between sepal width and sepal length in the case of Iris-setosa only. Correlation between sepal width and sepal length is not clearly observable in the case of other species.</p>
+The above scatter plot shows that there is a positive correlation between sepal width and sepal length in the case of Iris-setosa only. Correlation between sepal width and sepal length is not clearly observable in the case of other species.
 
 ### Summary and Conclusion
 
-<font color=blue>This section describe the conclusion and summary</font>
+This section describe the conclusion and summary
 
 ### References
 
