@@ -856,7 +856,7 @@ sns.scatterplot(x=df.petal_length, y=df.petal_width, hue = df.Species)
 
 
     
-![png](output_37_1.png)
+![png](images/output_37_1.png)
     
 
 
