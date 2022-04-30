@@ -2,7 +2,7 @@
 #### Author: Prasanth Sukumar
 
 ### Introduction
-The Iris dataset is the data set created by the British biologist Ronald Fisher. This data set contains measurement of sepal length, sepal width, petal length and petal width for 150 flowers from 3 species of Iris setosa, Iris versicolor, and Iris virginica. This analysis aims to explore the variables in the dataset and see if there exists any relationship between them.
+The Iris dataset is the data set created by the British biologist Ronald Fisher. This data set contains measurement of sepal length, sepal width, petal length and petal width for 150 flowers from 3 species of Iris flower; viz Iris setosa, Iris versicolor, and Iris virginica. This analysis aims to explore the variables in the dataset and see if there exists any relationship between them.
 
 
 ```python
