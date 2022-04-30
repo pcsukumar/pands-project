@@ -1,6 +1,9 @@
 ## Analysis of Fisher’s Iris data set
 #### Author: Prasanth Sukumar
 
+### Introduction
+The Iris dataset is the data set created by the British biologist Ronald Fisher. This data set contains measurement of sepal length, sepal width, petal length and petal width for 150 flowers from 3 species of Iris setosa, Iris versicolor, and Iris virginica. This analysis aims to explore the variables in the dataset and see if there exists any relationship between them.
+
 
 ```python
 import pandas as pd
@@ -872,8 +875,6 @@ sns.scatterplot(x=df.sepal_length, y=df.sepal_width, hue = df.Species)
 The above scatter plot shows that there is a positive correlation between sepal width and sepal length in the case of Iris-setosa only. Correlation between sepal width and sepal length is not clearly observable in the case of other species.
 
 ### Summary and Conclusion
-
-The Iris dataset is the data set created by the British biologist Ronald Fisher. This data set contains measurement of sepal length, sepal width, petal length and petal width for 150 flowers from 3 species of Iris setosa, Iris versicolor, and Iris virginica. This analysis aims to explore the variables in the dataset and see any relationship exists between them. 
 
 Analysis shows that the average petal length and petal width is comparatively much smaller for the species Iris Setosa (1.46 cm and 0.244 cm respectively) and largest for Iris Virginica (5.55 cm and 2.03 cm). Iris Versicolor has almost similar petal length and width (4.26 cm and 1.33 cm) to that of the Iris Versicolor.
 
